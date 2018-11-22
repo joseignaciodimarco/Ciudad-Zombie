@@ -10,6 +10,22 @@ var Jugador = {
   alto: 30,
   velocidad: 10,
   vidas: 5,
+  //avanzar: avanzar(),
+  //frenar(),
+  //perderVida(),
+
+  mover: function(movX, movY, sprite){
+    this.x += movX;
+    this.y += movY;
+    this.sprite = sprite;
+    Dibujante.dibujarEntidad(Jugador);
+  },
+
+  perderVidas: function(){
+    this.vidas--;
+    console.log(this.vidas);
+  }
+  
   // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,
   // y todo lo que haga falta para que cumpla con sus responsabilidades
 

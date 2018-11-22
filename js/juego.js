@@ -111,19 +111,24 @@ Juego.capturarMovimiento = function(tecla) {
   var movX = 0;
   var movY = 0;
   var velocidad = this.jugador.velocidad;
+  var sprite;
 
   // El movimiento esta determinado por la velocidad del jugador
   if (tecla == 'izq') {
     movX = -velocidad;
+    sprite = 'imagenes/auto_rojo_izquierda.png';
   }
   if (tecla == 'arriba') {
     movY = -velocidad;
+    sprite = 'imagenes/auto_rojo_arriba.png';
   }
   if (tecla == 'der') {
     movX = velocidad;
+    sprite = 'imagenes/auto_rojo_derecha.png';
   }
   if (tecla == 'abajo') {
     movY = velocidad;
+    sprite = 'imagenes/auto_rojo_abajo.png';
   }
 
   // Si se puede mover hacia esa posicion hay que hacer efectivo este movimiento
@@ -132,6 +137,8 @@ Juego.capturarMovimiento = function(tecla) {
     de sus metodos  */
 
     /* COMPLETAR */
+    Jugador.mover(movX, movY, sprite);
+    
   }
 };
 
@@ -146,7 +153,7 @@ Juego.dibujar = function() {
   utilizando al dibujante y los metodos que nos brinda.
   "Dibujante dibuja al jugador" */
 
-  /* Completar */
+  Dibujante.dibujarEntidad(Jugador);
 
   // Se recorren los obstaculos de la carretera pintandolos
   this.obstaculosCarretera.forEach(function(obstaculo) {
