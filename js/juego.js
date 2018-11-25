@@ -20,7 +20,22 @@ var Juego = {
   obstaculosCarretera: [
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
-    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1)
+    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 100, 430, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 350, 480, 30, 30, 1),
+    new Obstaculo('imagenes/huracan.png', 500, 420, 30, 30, 1),
+    new Obstaculo('imagenes/huracan.png', 840, 360, 30, 30, 1),
+
+    new Obstaculo('imagenes/bomba.png', 500, 80, 30, 30, 1),
+    new Obstaculo('imagenes/bomba.png', 760, 180, 30, 30, 1),
+    new Obstaculo('imagenes/darth_vader.png', 760, 500, 50, 50, 1),
+  
+    new Obstaculo('imagenes/bache.png', 90, 350, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 250, 400, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 400, 450, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 500, 350, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 400, 200, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 800, 80, 30, 30, 1)
 
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
@@ -59,6 +74,9 @@ Juego.iniciarRecursos = function() {
     'imagenes/mensaje_gameover.png',
     'imagenes/Splash.png',
     'imagenes/bache.png',
+    'imagenes/huracan.png',
+    'imagenes/bomba.png',
+    'imagenes/darth_vader.png',
     'imagenes/tren_horizontal.png',
     'imagenes/tren_vertical.png',
     'imagenes/valla_horizontal.png',
