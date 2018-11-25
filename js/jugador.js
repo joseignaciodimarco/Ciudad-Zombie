@@ -14,16 +14,46 @@ var Jugador = {
   //frenar(),
   //perderVida(),
 
-  mover: function(movX, movY, sprite){
-    this.x += movX;
-    this.y += movY;
-    this.sprite = sprite;
+  mover: function(movX, movY, tecla){
+    switch (tecla){
+      case "arriba":
+        this.cambiaDimensiones('vertical');
+        this.sprite = 'imagenes/auto_rojo_arriba.png';
+        this.y += movY;
+        break;
+      case "abajo":
+        this.cambiaDimensiones('vertical');
+        this.sprite = 'imagenes/auto_rojo_abajo.png';
+        this.y += movY;
+        break;
+      case "izq":
+        this.cambiaDimensiones('horizontal');
+        this.sprite = 'imagenes/auto_rojo_izquierda.png';
+        this.x += movX;
+        break;
+      case "der":
+        this.cambiaDimensiones('horizontal');
+        this.sprite = 'imagenes/auto_rojo_derecha.png';
+        this.x += movX;
+        break;  
+    }
+   
     Dibujante.dibujarEntidad(Jugador);
   },
 
   perderVidas: function(){
     this.vidas--;
     console.log(this.vidas);
+  },
+
+  cambiaDimensiones: function(sentido){
+    if(sentido == 'vertical'){
+      this.ancho = 15;
+      this.alto = 30;
+    }else{
+      this.ancho = 30;
+      this.alto = 15;
+    }
   }
   
   // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,

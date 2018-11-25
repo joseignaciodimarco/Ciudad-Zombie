@@ -115,20 +115,16 @@ Juego.capturarMovimiento = function(tecla) {
 
   // El movimiento esta determinado por la velocidad del jugador
   if (tecla == 'izq') {
-    movX = -velocidad;
-    sprite = 'imagenes/auto_rojo_izquierda.png';
+    movX = -velocidad;  
   }
   if (tecla == 'arriba') {
     movY = -velocidad;
-    sprite = 'imagenes/auto_rojo_arriba.png';
   }
   if (tecla == 'der') {
     movX = velocidad;
-    sprite = 'imagenes/auto_rojo_derecha.png';
   }
   if (tecla == 'abajo') {
     movY = velocidad;
-    sprite = 'imagenes/auto_rojo_abajo.png';
   }
 
   // Si se puede mover hacia esa posicion hay que hacer efectivo este movimiento
@@ -137,7 +133,7 @@ Juego.capturarMovimiento = function(tecla) {
     de sus metodos  */
 
     /* COMPLETAR */
-    Jugador.mover(movX, movY, sprite);
+    Jugador.mover(movX, movY, tecla);
     
   }
 };
