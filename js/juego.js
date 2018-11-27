@@ -23,17 +23,18 @@ var Juego = {
     new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 100, 430, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png', 350, 480, 30, 30, 1),
-    new Obstaculo('imagenes/huracan.png', 500, 420, 30, 30, 1),
-    new Obstaculo('imagenes/huracan.png', 840, 360, 30, 30, 1),
-
-    new Obstaculo('imagenes/bomba.png', 500, 80, 30, 30, 1),
-    new Obstaculo('imagenes/bomba.png', 760, 180, 30, 30, 1),
-    new Obstaculo('imagenes/darth_vader.png', 760, 500, 50, 50, 1),
-  
+    new Obstaculo('imagenes/huracan.png', 500, 420, 30, 30, 2),
+    new Obstaculo('imagenes/huracan.png', 840, 360, 30, 30, 2),
+    new Obstaculo('imagenes/bomba.png', 500, 80, 30, 30, 3),
+    new Obstaculo('imagenes/bomba.png', 760, 180, 30, 30, 3),
+    new Obstaculo('imagenes/darth_vader.png', 760, 470, 50, 50, 4),
+    new Obstaculo('imagenes/auto_verde_abajo.png', 550, 230, 15, 30, 1),
+    new Obstaculo('imagenes/auto_verde_derecha.png', 200, 480, 30, 15, 1),
+    new Obstaculo('imagenes/auto_verde_derecha.png', 850, 250, 30, 15, 1),
     new Obstaculo('imagenes/bache.png', 90, 350, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 250, 400, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 400, 450, 30, 30, 1),
-    new Obstaculo('imagenes/bache.png', 500, 350, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 530, 350, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 400, 200, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 800, 80, 30, 30, 1)
 
@@ -149,7 +150,7 @@ Juego.capturarMovimiento = function(tecla) {
   if (this.chequearColisiones(movX + this.jugador.x, movY + this.jugador.y)) {
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
     de sus metodos  */
-
+    
     /* COMPLETAR */
     Jugador.mover(movX, movY, tecla);
     
@@ -186,6 +187,10 @@ Juego.dibujar = function() {
     var x = tamanio * i
     Dibujante.dibujarRectangulo('red', x, 0, tamanio, 8);
   }
+
+  //Se dibuja un rectangulo para pintar llegada
+  Dibujante.dibujarRectangulo('blue', 759, 555, 127, 8);
+
 };
 
 
@@ -223,6 +228,8 @@ Juego.chequearColisiones = function(x, y) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
 
       /*COMPLETAR, obstaculo debe chocar al jugador*/
+      console.log('colision');
+      obstaculo.quitarVida();
 
       puedeMoverse = false
     }

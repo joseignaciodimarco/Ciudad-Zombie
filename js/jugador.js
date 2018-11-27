@@ -41,9 +41,8 @@ var Jugador = {
     Dibujante.dibujarEntidad(Jugador);
   },
 
-  perderVidas: function(){
-    this.vidas--;
-    console.log(this.vidas);
+  perderVidas: function(potencia){
+    this.vidas = this.vidas - potencia;
   },
 
   cambiaDimensiones: function(sentido){
