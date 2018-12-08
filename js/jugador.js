@@ -10,10 +10,7 @@ var Jugador = {
   alto: 30,
   velocidad: 10,
   vidas: 5,
-  //avanzar: avanzar(),
-  //frenar(),
-  //perderVida(),
-
+  
   mover: function(movX, movY, tecla){
     switch (tecla){
       case "arriba":
@@ -54,8 +51,4 @@ var Jugador = {
       this.alto = 15;
     }
   }
-  
-  // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,
-  // y todo lo que haga falta para que cumpla con sus responsabilidades
-
 }
